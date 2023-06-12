@@ -14,17 +14,15 @@
         crossorigin="anonymous"></script>
 
     <script type="text/javascript">
-        function convert() {
-            var w = document.getElementById("inp1").value;
-            var h = document.getElementById("inp2").value;
-            r = w.value * 10000 / (h.value * h.value);
+        function calculate() {
+            let w = document.getElementById("inp1").value;
+            let h = document.getElementById("inp2").value;
+            let r = w * 10000 / (h * h);
 
-            if (w.value !== " " || h.value !== " " || r <= 18.4) {
+            if (r <= 18.4) {
                 document.getElementById("result").innerHTML = "You are underweight.";
-
             } else if (r <= 24.9) {
                 document.getElementById("result").innerHTML = "You are healthy.";
-
             } else if (r <= 29.9) {
                 document.getElementById("result").innerHTML = "You are over weight.";
             } else if (r <= 34.9) {
@@ -34,8 +32,8 @@
             } else {
                 document.getElementById("result").innerHTML = "You are severely obese. ";
             }
+            return false;
         }
-
     </script>
 </head>
 
@@ -58,10 +56,8 @@
                         in here (KG)</div>
                     <input type="number" class="input-1" id="inp1" style="margin-bottom: 36px;">
                     <div class="lable-1" style="margin-bottom: 16px;">And your height in here (CM)</div>
-
                     <input type="number" class="input-1" id="inp2" style="margin-bottom: 27px;">
-
-                    <input type="button" class="btn-1" id="button-1" value="Calculate" onclick="convert()"
+                    <input type="button" class="btn-1" id="button-1" value="Calculate" onclick="calculate()"
                         style="margin-bottom: 27px;">
                 </div>
                 <div class="result-div" style="padding-top: 88px;">
@@ -70,7 +66,6 @@
             </div>
         </div>
     </div>
-
 
 </body>
 
